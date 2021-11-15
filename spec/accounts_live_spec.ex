@@ -1,13 +1,13 @@
 defmodule LiveViewEspecWeb.AccountsLiveSpec do
-  use ESpec.Phoenix, controller: LiveViewEspecWeb.UserLive.Index, async: false
+  #import Phoenix.LiveViewTest
+  use ESpec.Phoenix, live_view: LiveViewEspecWeb.UserLive.Index, async: false, pid: self()
 
-  import Phoenix.LiveViewTest
 
   describe "GET /accounts" do
     it "displays the page" do
-      {:ok, page_live, disconnected_html} = live(build_conn, "/live/accounts")
-      assert disconnected_html =~ "My App's Title"
-      assert render(page_live) =~ "My App's Title"
+      {:ok, page_live, disconnected_html} = live(live_conn(), "/live/accounts")
+      expect disconnected_html |> to(match "Listing Users")
+      expect render(page_live) |> to(match "Listing Users")
     end
   end
 end

@@ -50,7 +50,7 @@ defmodule LiveViewEspec.MixProject do
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:espec_phoenix, github: "antonmi/espec_phoenix", only: :test}
+      {:espec_phoenix, github: "karlosmid/espec_phoenix", branch: "live_view_support", only: :test}
     ]
   end
 

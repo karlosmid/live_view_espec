@@ -13,7 +13,14 @@ defmodule ESpec.Phoenix.Extend do
       @endpoint LiveViewEspecWeb.Endpoint
     end
   end
+  def live_view do
+    quote do
+      alias LiveViewEspec
+      import LiveViewEspecWeb.Router.Helpers
 
+      @endpoint LiveViewEspecWeb.Endpoint
+    end
+  end
   def view do
     quote do
       import LiveViewEspecWeb.Router.Helpers
