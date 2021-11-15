@@ -1,5 +1,4 @@
 defmodule LiveViewEspecWeb.AccountsLiveSpec do
-  #import Phoenix.LiveViewTest
   use ESpec.Phoenix, live_view: LiveViewEspecWeb.UserLive.Index, async: false, pid: self()
 
 
